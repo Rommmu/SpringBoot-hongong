@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default}">
+
+<div layout:fragment="content">
+    <!-- new.html -->
+
+    <form th:action="@{/articles/create}" method="post" th:object="${articleDto}">
+        <label>Title:</label>
+        <input type="text" th:field="*{title}" />
+
+        <label>Content:</label>
+        <textarea th:field="*{content}"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+</html>
